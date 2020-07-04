@@ -1,18 +1,27 @@
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Img from 'gatsby-image'
+import { useThemeContext } from '../../libs/ThemeContext'
 
 import Container from './styles'
 
-const Header = ({ siteTitle }) => (
-  <Container>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+const Header = ({ siteTitle }) => {
+  const { colors } = useThemeContext()
+  console.log('foo theme', colors)
+  const imgData = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "fran.png" }) {
+        childImageSharp {
+          fixed(width: 150, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <Container themeColors={colors}>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -24,9 +33,12 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-    </div>
-  </Container>
-)
+      <div id="profile-picture-holder">
+        <Img fixed={imgData?.placeholderImage?.childImageSharp?.fixed} />
+      </div>
+    </Container>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -1,8 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Fran Cardoso`,
+    title: `Hello World!`,
     description: `My personal site made using gastby framework.`,
     author: `Fran Cardoso`,
+    blackThemePallete: {
+      primary: '#FFFFFF',
+      secundary: '#FFFFFF',
+    },
+    whiteThemePallete: {
+      primary: '#FFFFFF',
+      secundary: '#FFFFFF',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/code-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
