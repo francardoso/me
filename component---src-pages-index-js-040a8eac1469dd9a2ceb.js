@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{RXBc:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),o=a("Zttt"),i=a("vrFN");t.default=function(){return l.a.createElement(o.a,null,l.a.createElement(i.a,{title:"Home"}),l.a.createElement("h1",null,"Hi people"),l.a.createElement("p",null,"Welcome to your new Gatsby site."),l.a.createElement("p",null,"Now go build something great."),l.a.createElement("p",null,"Báita sitizinho açai com maça, e guaraná "))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-040a8eac1469dd9a2ceb.js.map
