@@ -3,14 +3,7 @@ module.exports = {
     title: `Hello World!`,
     description: `My personal site made using gastby framework.`,
     author: `Fran Cardoso`,
-    blackThemePallete: {
-      primary: '#FFFFFF',
-      secundary: '#FFFFFF',
-    },
-    whiteThemePallete: {
-      primary: '#FFFFFF',
-      secundary: '#FFFFFF',
-    },
+    pathPrefix: `/fran-gatsby-site`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
