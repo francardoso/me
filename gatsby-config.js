@@ -1,9 +1,9 @@
 module.exports = {
+  pathPrefix: `/me`,
   siteMetadata: {
     title: `Hello World!`,
     description: `My personal site made using gastby framework.`,
     author: `Fran Cardoso`,
-    pathPrefix: `/fran-gatsby-site`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
