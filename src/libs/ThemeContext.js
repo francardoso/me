@@ -2,7 +2,8 @@ import React, { useState, createContext, useContext, useEffect } from 'react';
 
 function getInitialColorMode() {
   return {
-    primary: '#ECF0F0;',
+    theme: 'light',
+    primary: '#ECF0F0',
     secundary: '#A4B5B9',
   };
 }
@@ -15,7 +16,7 @@ export const ThemeProvider = ({ children }) => {
   const setColors = value => {
     rawSetColors(value);
     // Persist it on update
-    window.localStorage.setItem('color', value);
+    window.localStorage.setItem('color', JSON.stringify(value));
   };
 
   useEffect(() => {
