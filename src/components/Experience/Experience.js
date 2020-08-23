@@ -12,14 +12,14 @@ const Experience = () => {
     query {
       mobilizaImg: file(relativePath: { eq: "mobiliza.png" }) {
         childImageSharp {
-          fixed(width: 150, quality: 100) {
+          fixed(width: 80, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       ufscImg: file(relativePath: { eq: "ufsc.png" }) {
         childImageSharp {
-          fixed(width: 150, quality: 100) {
+          fixed(width: 80, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -36,7 +36,7 @@ const Experience = () => {
           <h1 className="period-title">2016 - Atualmente</h1>
           <h1 className="company-name">Mobiliza</h1>
           <h3 className="job-role">Programador Web Full Stack</h3>
-          <div>
+          <div className="job-description">
             <ul>
               <li>
                 Desenvolvimento de uma ferramenta de autoria, estilo
@@ -59,15 +59,15 @@ const Experience = () => {
           <Img fixed={imgs?.ufscImg?.childImageSharp?.fixed} />
         </div>
         <div className="job-details">
-          <h1 className="period-title">2015-2016</h1>
+          <h1 className="period-title">2015 - 2016</h1>
           <h1 className="company-name">UFSC</h1>
           <h3 className="job-role">Bolsista de Iniciação Científica</h3>
-          <div>
+          <div className="job-description">
             <ul>
               <li>
                 Trabalho com ferramenta analítica de Tweets, para ter um senso
-                da opinião popular sobre questões políticas . Back-end em Java,
-                e front-end com angular.
+                da opinião popular sobre questões políticas . <br />
+                Backend em Java, e frontend Angular + Jquery.
               </li>
             </ul>
           </div>

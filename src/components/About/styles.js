@@ -9,7 +9,7 @@ export default styled.div`
   p {
     font-size: 1.8em;
     color: #4a4a4a;
-    padding: 15px;
+    padding: 30px;
   }
   h1 {
     display: flex;
