@@ -6,24 +6,24 @@ import { useThemeContext } from '../../libs/ThemeContext';
 import Container from './styles';
 
 const ThemeToggleBtn = () => {
-  const { setColors, colors } = useThemeContext();
+  const { theme, setTheme } = useThemeContext();
   const changeThemeColors = () => {
     const newTheme =
-      colors.theme === 'light'
+      theme.name === 'light'
         ? {
-            theme: 'dark',
+            name: 'dark',
             pimary: '#000',
             secundary: '#000',
           }
         : {
-            theme: 'light',
+            name: 'light',
             primary: '#ECF0F0',
             secundary: '#A4B5B9',
           };
-    setColors(newTheme);
+    setTheme(newTheme);
   };
   return (
-    <Container type="button" onClick={changeThemeColors} themeColors={colors}>
+    <Container type="button" onClick={changeThemeColors}>
       <Icon icon="faSun" />
     </Container>
   );

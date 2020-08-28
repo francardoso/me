@@ -12,7 +12,7 @@ export default styled.button`
   margin: 0 10px 10px 0;
   svg {
     font-size: 2em;
-    color: ${props => props?.themeColors?.primary};
+    color: ${props => props?.theme?.primry};
   }
   &:hover {
     color: ${props => lighten(0.2, '#000')};

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export default styled.div`
-  background-color: ${props => props?.themeColors?.primary};
+  background-color: ${props => props?.theme?.primary};
   display: flex;
   & > * {
     flex: 1;

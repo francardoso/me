@@ -10,7 +10,7 @@ export const Job = styled.div`
     align-items: center;
     .gatsby-image-wrapper {
       border-radius: 100%;
-      border: 5px solid ${props => props?.themeColors?.primary};
+      border: 5px solid ${props => props?.theme?.primary};
     }
     /* &:before {
       position: absolute;
@@ -62,5 +62,5 @@ export const Job = styled.div`
 `;
 
 export default styled.div`
-  background-color: ${props => props?.themeColors?.secundary};
+  background-color: ${props => props?.theme?.secundary};
 `;

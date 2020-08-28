@@ -1,7 +1,7 @@
-import styled from 'styled-components/macro'
+import styled from 'styled-components/macro';
 
 export default styled.div`
   margin: 0 auto;
   max-width: 960;
   padding: 0 1.0875rem 1.45rem;
-`
+`;

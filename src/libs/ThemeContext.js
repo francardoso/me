@@ -1,30 +1,43 @@
-import React, { useState, createContext, useContext, useEffect } from 'react';
+import React, {
+  useState,
+  createContext,
+  useContext,
+  useEffect,
+  useCallback,
+} from 'react';
+import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 
-function getInitialColorMode() {
+function getInitialTheme() {
   return {
-    theme: 'light',
+    name: 'light',
     primary: '#ECF0F0',
     secundary: '#A4B5B9',
   };
 }
-export const ThemeContext = createContext(getInitialColorMode());
+export const ThemeContext = createContext(getInitialTheme());
 
 export const useThemeContext = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
-  const [colors, rawSetColors] = useState(undefined);
-  const setColors = value => {
-    rawSetColors(value);
+  const [theme, rawSetTheme] = useState({});
+  const setTheme = value => {
+    rawSetTheme(value);
     // Persist it on update
     window.localStorage.setItem('color', JSON.stringify(value));
   };
-
   useEffect(() => {
-    rawSetColors(getInitialColorMode());
+    rawSetTheme(getInitialTheme());
   }, []);
+
   return (
-    <ThemeContext.Provider value={{ colors, setColors }}>
-      {children}
+    <ThemeContext.Provider
+      setTheme={setTheme}
+      theme={theme}
+      value={{ setTheme, theme }}
+    >
+      <StyledComponentsThemeProvider theme={theme}>
+        {children}
+      </StyledComponentsThemeProvider>
     </ThemeContext.Provider>
   );
 };

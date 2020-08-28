@@ -2,12 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { useThemeContext } from '../../libs/ThemeContext';
-
 import Container, { Job } from './styles';
 
 const Experience = () => {
-  const { colors } = useThemeContext();
   const imgs = useStaticQuery(graphql`
     query {
       mobilizaImg: file(relativePath: { eq: "mobiliza.png" }) {
@@ -27,8 +24,8 @@ const Experience = () => {
     }
   `);
   return (
-    <Container themeColors={colors}>
-      <Job className="job" themeColors={colors}>
+    <Container>
+      <Job className="job">
         <div className="timeline-item">
           <Img fixed={imgs?.mobilizaImg?.childImageSharp?.fixed} />
         </div>
@@ -54,7 +51,7 @@ const Experience = () => {
           </div>
         </div>
       </Job>
-      <Job className="job" themeColors={colors}>
+      <Job className="job">
         <div className="timeline-item">
           <Img fixed={imgs?.ufscImg?.childImageSharp?.fixed} />
         </div>

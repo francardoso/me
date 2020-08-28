@@ -2,12 +2,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
-import { useThemeContext } from '../../libs/ThemeContext';
 
 import Container from './styles';
 
 const Header = ({ siteTitle }) => {
-  const { colors } = useThemeContext();
   const imgData = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "fran.png" }) {
@@ -20,7 +18,7 @@ const Header = ({ siteTitle }) => {
     }
   `);
   return (
-    <Container themeColors={colors}>
+    <Container>
       <div id="profile-picture-holder">
         <Img fixed={imgData?.placeholderImage?.childImageSharp?.fixed} />
       </div>
