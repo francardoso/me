@@ -1,18 +1,10 @@
-import React, {
-  useState,
-  createContext,
-  useContext,
-  useEffect,
-  useCallback,
-} from 'react';
+import React, { useState, createContext, useContext, useEffect } from 'react';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 
+import getTheme from './getTheme';
+
 function getInitialTheme() {
-  return {
-    name: 'light',
-    primary: '#ECF0F0',
-    secundary: '#A4B5B9',
-  };
+  return getTheme('light');
 }
 export const ThemeContext = createContext(getInitialTheme());
 

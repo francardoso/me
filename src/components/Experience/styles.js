@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { darken } from 'polished';
 
 export const Job = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const Job = styled.div`
     align-items: center;
     .gatsby-image-wrapper {
       border-radius: 100%;
-      border: 5px solid ${props => props?.theme?.primary};
+      border: 5px solid ${props => props?.theme?.primary?.background};
     }
     /* &:before {
       position: absolute;
@@ -41,6 +42,7 @@ export const Job = styled.div`
   .job-details {
     width: 100%;
     margin-left: 45px;
+    color: ${props => darken(0.5, props?.theme?.primary?.text ?? '#000')};
     h1.period-title {
       font-size: 2em;
       text-align: center;
@@ -62,5 +64,5 @@ export const Job = styled.div`
 `;
 
 export default styled.div`
-  background-color: ${props => props?.theme?.secundary};
+  background-color: ${props => props?.theme?.secundary?.background};
 `;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Icon from '../Icon';
 import { useThemeContext } from '../../libs/ThemeContext';
+import getTheme from '../../libs/getTheme';
 
 import Container from './styles';
 
@@ -9,17 +10,7 @@ const ThemeToggleBtn = () => {
   const { theme, setTheme } = useThemeContext();
   const changeThemeColors = () => {
     const newTheme =
-      theme.name === 'light'
-        ? {
-            name: 'dark',
-            pimary: '#000',
-            secundary: '#000',
-          }
-        : {
-            name: 'light',
-            primary: '#ECF0F0',
-            secundary: '#A4B5B9',
-          };
+      theme.name === 'light' ? getTheme('dark') : getTheme('light');
     setTheme(newTheme);
   };
   return (
