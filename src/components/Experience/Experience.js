@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
-import Container, { Job } from './styles';
+import Job from '../Job';
+import Container from './styles';
 
 const Experience = () => {
   const imgs = useStaticQuery(graphql`
@@ -25,51 +25,41 @@ const Experience = () => {
   `);
   return (
     <Container>
-      <Job className="job">
-        <div className="timeline-item">
-          <Img fixed={imgs?.mobilizaImg?.childImageSharp?.fixed} />
-        </div>
-        <div className="job-details">
-          <h1 className="period-title">2016 - Atualmente</h1>
-          <h1 className="company-name">Mobiliza</h1>
-          <h3 className="job-role">Programador Web Full Stack</h3>
-          <div className="job-description">
-            <ul>
-              <li>
-                Desenvolvimento de uma ferramenta de autoria, estilo
-                power-point. Front-end: Jquery, backbone. Backend: Node.
-              </li>
-              <li>
-                Desenvolvimento de uma plataforma de gestão de cursos. Backend:
-                Node. Frontend: React/redux.
-              </li>
-              <li>
-                Algumas tarefas de infraestrutura, utilizando AWS (EC2, S3,
-                Route 53).
-              </li>
-            </ul>
-          </div>
-        </div>
-      </Job>
-      <Job className="job">
-        <div className="timeline-item">
-          <Img fixed={imgs?.ufscImg?.childImageSharp?.fixed} />
-        </div>
-        <div className="job-details">
-          <h1 className="period-title">2015 - 2016</h1>
-          <h1 className="company-name">UFSC</h1>
-          <h3 className="job-role">Bolsista de Iniciação Científica</h3>
-          <div className="job-description">
-            <ul>
-              <li>
-                Trabalho com ferramenta analítica de Tweets, para ter um senso
-                da opinião popular sobre questões políticas . <br />
-                Backend em Java, e frontend Angular + Jquery.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </Job>
+      <Job
+        image={imgs?.mobilizaImg?.childImageSharp?.fixed}
+        company="Mobiliza"
+        occupation="Programador Web Full Stack"
+        period="2016 - Atualmente"
+        tasks={[
+          {
+            description:
+              'Desenvolvimento de uma ferramenta de autoria, estilo power-point.',
+            techs: ['Jquery', 'Backbone', 'Node'],
+          },
+          {
+            description:
+              'Desenvolvimento de uma plataforma de gestão de cursos.',
+            techs: ['React', 'Redux', 'Node'],
+          },
+          {
+            description: 'Algumas tarefas de infraestrutura, utilizando AWS.',
+            techs: ['EC2', 'S3', 'Route 53', 'EKS', 'ECR'],
+          },
+        ]}
+      />
+      <Job
+        image={imgs?.ufscImg?.childImageSharp?.fixed}
+        company="UFSC"
+        period="2015 - 2016"
+        occupation="Bolsista de Iniciação Científica"
+        tasks={[
+          {
+            description:
+              'Trabalho com ferramenta analítica de Tweets, para ter um senso da opinião popular sobre questões políticas.',
+            techs: ['Java', 'Angular', 'Jquery'],
+          },
+        ]}
+      />
     </Container>
   );
 };
