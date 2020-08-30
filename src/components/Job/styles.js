@@ -3,8 +3,9 @@ import { darken } from 'polished';
 
 export default styled.div`
   display: flex;
-  padding: 20px;
   position: relative;
+  width: 100%;
+  margin: 20px 0;
   .timeline-item {
     display: flex;
     justify-content: center;

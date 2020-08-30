@@ -6,4 +6,5 @@ export default styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${props => props?.theme?.secundary?.background};
+  padding: 0 20px;
 `;
