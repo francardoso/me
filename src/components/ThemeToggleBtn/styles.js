@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { lighten } from 'polished';
+import { darken } from 'polished';
 
 export default styled.button`
   position: fixed;
@@ -12,9 +12,11 @@ export default styled.button`
   margin: 0 10px 10px 0;
   svg {
     font-size: 2em;
-    color: ${props => props?.theme?.primry};
+    color: ${props => props?.theme?.primary?.text};
   }
   &:hover {
-    color: ${props => lighten(0.2, '#000')};
+    svg {
+      color: ${props => darken(0.2, props?.theme?.primary?.text ?? '#000')};
+    }
   }
 `;

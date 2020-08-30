@@ -16,11 +16,11 @@ export default themeName => {
       return {
         name: 'dark',
         primary: {
-          background: '#000',
+          background: '#363636',
           text: '#fff',
         },
         secundary: {
-          background: '#000',
+          background: '#212121',
           text: '#fff',
         },
       };
