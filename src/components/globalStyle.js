@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
         display: block;
     }
     body {
+        position:relative;
         font-family: Roboto;
         line-height: 1;
     }

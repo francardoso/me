@@ -2,6 +2,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
+import Menu from '../Menu';
+import ThemeToggleBtn from '../ThemeToggleBtn';
+import LanguagePicker from '../LanguagePicker';
 
 import Container from './styles';
 
@@ -23,6 +26,10 @@ const Header = ({ siteTitle }) => {
         <Img fixed={imgData?.placeholderImage?.childImageSharp?.fixed} />
       </div>
       <h1>Oi, eu sou o Fran!</h1>
+      <Menu>
+        <ThemeToggleBtn />
+        <LanguagePicker />
+      </Menu>
     </Container>
   );
 };
