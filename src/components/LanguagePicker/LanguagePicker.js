@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 import Container, { FlagBtn } from './styles';
 
 const LanguagePicker = () => {
@@ -41,15 +42,17 @@ const LanguagePicker = () => {
       }
     }
   `);
+  const { i18n } = useTranslation();
+
   return (
     <Container>
-      <FlagBtn type="button">
+      <FlagBtn type="button" onClick={() => i18n.changeLanguage('pt')}>
         <Image fixed={brazilFlagFixed} />
       </FlagBtn>
-      <FlagBtn type="button">
+      <FlagBtn type="button" onClick={() => i18n.changeLanguage('en')}>
         <Image fixed={usaFlagFixed} />
       </FlagBtn>
-      <FlagBtn type="button">
+      <FlagBtn type="button" onClick={() => i18n.changeLanguage('es')}>
         <Image fixed={spainFlagFixed} />
       </FlagBtn>
     </Container>
