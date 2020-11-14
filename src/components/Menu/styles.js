@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export default styled.div``;
 
@@ -12,12 +13,13 @@ export const CloseButton = styled.button`
   cursor: pointer;
   z-index: 10;
   margin: 20px 20px;
+  color: ${props => props?.theme?.primary?.text};
   svg {
     font-size: 2em;
   }
-  &[open] {
+  &:hover {
     svg {
-      color: #fff;
+      color: ${props => darken(0.2, props?.theme?.primary?.text ?? '#000')};
     }
   }
 `;
@@ -25,7 +27,8 @@ export const CloseButton = styled.button`
 export const MenuOptions = styled.div`
   position: absolute;
   z-index: 1;
-  background: black;
+  background-color: ${props => props?.theme?.primary?.background};
+  opacity: 0.9;
   height: 100%;
   top: 0px;
   right: 0px;
