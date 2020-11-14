@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 
 import Job from '../Job';
 import Container from './styles';
@@ -23,26 +24,26 @@ const Experience = () => {
       }
     }
   `);
+
+  const { t } = useTranslation();
   return (
     <Container>
       <Job
         image={imgs?.mobilizaImg?.childImageSharp?.fixed}
         company="Mobiliza"
-        occupation="Programador Web Full Stack"
-        period="2016 - Atualmente"
+        occupation={t('jobs.mobiliza.occupation')}
+        period={t('jobs.mobiliza.period')}
         tasks={[
           {
-            description:
-              'Desenvolvimento de uma ferramenta de autoria, estilo power-point.',
+            description: t('jobs.mobiliza.tasks.0.description'),
             techs: ['Jquery', 'Backbone', 'Node'],
           },
           {
-            description:
-              'Desenvolvimento de uma plataforma de gestão de cursos.',
+            description: t('jobs.mobiliza.tasks.1.description'),
             techs: ['React', 'Redux', 'Node'],
           },
           {
-            description: 'Algumas tarefas de infraestrutura, utilizando AWS.',
+            description: t('jobs.mobiliza.tasks.2.description'),
             techs: ['EC2', 'S3', 'Route 53', 'EKS', 'ECR'],
           },
         ]}
@@ -51,11 +52,10 @@ const Experience = () => {
         image={imgs?.ufscImg?.childImageSharp?.fixed}
         company="UFSC"
         period="2015 - 2016"
-        occupation="Bolsista de Iniciação Científica"
+        occupation={t('jobs.ufsc.occupation')}
         tasks={[
           {
-            description:
-              'Trabalho com ferramenta analítica de Tweets, para ter um senso da opinião popular sobre questões políticas.',
+            description: t('jobs.ufsc.tasks.0.description'),
             techs: ['Java', 'Angular', 'Jquery'],
           },
         ]}
