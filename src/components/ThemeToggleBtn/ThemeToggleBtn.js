@@ -1,10 +1,9 @@
 import React from 'react';
+import { Switch, FormControlLabel } from '@material-ui/core';
 
 import Icon from '../Icon';
 import { useThemeContext } from '../../libs/ThemeContext';
 import getTheme from '../../libs/getTheme';
-
-import Container from './styles';
 
 const ThemeToggleBtn = () => {
   const { theme, setTheme } = useThemeContext();
@@ -14,9 +13,21 @@ const ThemeToggleBtn = () => {
     setTheme(newTheme);
   };
   return (
-    <Container type="button" onClick={changeThemeColors}>
-      <Icon icon="faSun" />
-    </Container>
+    <FormControlLabel
+      control={
+        <Switch
+          checked={theme.name !== 'light'}
+          onChange={changeThemeColors}
+          name="switchTheme"
+          inputProps={{ 'aria-label': 'Change Theme' }}
+          color={theme?.primary?.background}
+        />
+      }
+      label={
+        <Icon icon={theme.name === 'light' ? 'faMoon' : 'faSun'} size="2x" />
+      }
+      labelPlacement="top"
+    />
   );
 };
 
